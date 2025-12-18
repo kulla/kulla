@@ -18,15 +18,12 @@ clarity.
   interactive learning materials, designed to help teachers create didactically
   high-quality content with ease. The key challenge is combining a Google
   Docs–like WYSIWYG experience with highly structured, interactive
-  exercises—successfully bridging usability and formal structure.Tech:
-  TypeScript, React, Tailwind CSS, Yjs, Slate, ProseMirror
+  exercises—successfully bridging usability and formal structure.
 - [**The Open Learning Platform serlo.org**](https://de.serlo.org/) — Non-profit
   platform providing free and openly licensed educational resources to enable
   equitable access to high-quality education. I led a team of up to twelve
   engineers and helped rebuild the platform using a modern microservice
-  architecture, while also contributing to fundraising and financial
-  planning.Tech: TypeScript, Node.js, GraphQL, Next.js, React, Docker,
-  Kubernetes, Terraform
+  architecture, while also contributing to fundraising and financial planning.
 - [**Open Textbook "Mathe für Nicht-Freaks"**](https://de.wikibooks.org/wiki/Mathe_f%C3%BCr_Nicht-Freaks)
   — Open textbook based on the belief that every university student can
   understand mathematics. It emphasizes intuition and motivation over rote
