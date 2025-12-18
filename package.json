@@ -1,6 +1,5 @@
 {
   "name": "kulla-gitub-profile",
-  "module": "index.ts",
   "type": "module",
   "private": true,
   "devDependencies": {
