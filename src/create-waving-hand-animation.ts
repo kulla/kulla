@@ -7,6 +7,8 @@ const outputPath = process.argv[2];
 
 const newSVG = animate(WavingHandSVG, {
   hand: { rotate: 10, transformOrigin: "97 110" },
+  shadowLeft: { translateX: -7, translateY: 7 },
+  shadowRight: { translateX: 7, translateY: -7 },
 });
 
 renderSVGToPNG(newSVG, path.join(outputPath, "test.png"));
