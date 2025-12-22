@@ -16,6 +16,11 @@ const newSVG = injectCSSAnimation(WavingHandSVG, wavingAnimationCSS);
 
 renderSVGToPNG(newSVG, path.join(outputPath, "test.png"));
 
+console.log(
+  new Date(Date.now()).toISOString(),
+  "Waving hand animation created!",
+);
+
 function renderSVGToPNG(svgContent: string, outputFilePath: string) {
   const resvg = new Resvg(svgContent, { fitTo: { mode: "width", value: 512 } });
 
