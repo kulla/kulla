@@ -5,14 +5,9 @@ import * as path from "path";
 
 const outputPath = process.argv[2];
 
-const wavingAnimationCSS = `
-  #hand {
-    transform: rotate(30deg);
-    transform-origin: center;
-    transform-box: fill-box;
-  }
-`;
-const newSVG = injectCSSAnimation(WavingHandSVG, wavingAnimationCSS);
+const newSVG = animate(WavingHandSVG, {
+  hand: { rotate: 10, transformOrigin: "97 110" },
+});
 
 renderSVGToPNG(newSVG, path.join(outputPath, "test.png"));
 
@@ -27,10 +22,31 @@ function renderSVGToPNG(svgContent: string, outputFilePath: string) {
   fs.writeFileSync(outputFilePath, resvg.render().asPng());
 }
 
-function injectCSSAnimation(svgContent: string, css: string): string {
-  const svgWithStyle = svgContent.replace(
-    "</svg>",
-    `<style>${css}</style></svg>`,
+function animate(
+  svgContent: string,
+  changes: Record<string, TransformSpec>,
+): string {
+  return Object.entries(changes).reduce(
+    (updatedSVG, [id, spec]) =>
+      updatedSVG.replace(`id="${id}"`, `id="${id}" ${createTransform(spec)}`),
+    svgContent,
   );
-  return svgWithStyle;
+}
+
+function createTransform(spec: TransformSpec): string {
+  return `
+    transform="
+      translate(${spec.translateX ?? 0} ${spec.translateY ?? 0})
+      rotate(${spec.rotate ?? 0} ${spec.transformOrigin ?? ""})
+    "
+  `
+    .replace(/\s+/g, " ")
+    .trim();
+}
+
+interface TransformSpec {
+  translateX?: number;
+  translateY?: number;
+  rotate?: number;
+  transformOrigin?: string;
 }
