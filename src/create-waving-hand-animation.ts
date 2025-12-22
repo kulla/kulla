@@ -1,10 +1,8 @@
+import WavingHandSVG from "./assets/waving_hand.svg" assert { type: "text" };
 import { Resvg } from "@resvg/resvg-js";
 import * as fs from "fs";
 import * as path from "path";
 
-const __dirname = new URL(".", import.meta.url).pathname;
-const svgPath = path.join(__dirname, "assets", "waving_hand.svg");
-const svg = fs.readFileSync(svgPath, "utf-8");
 const outputPath = process.argv[2];
 
 const wavingAnimationCSS = `
@@ -14,7 +12,7 @@ const wavingAnimationCSS = `
     transform-box: fill-box;
   }
 `;
-const newSVG = injectCSSAnimation(svg, wavingAnimationCSS);
+const newSVG = injectCSSAnimation(WavingHandSVG, wavingAnimationCSS);
 
 renderSVGToPNG(newSVG, path.join(outputPath, "test.png"));
 
