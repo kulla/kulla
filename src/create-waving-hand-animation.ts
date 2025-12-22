@@ -10,12 +10,7 @@ const outputPath = process.argv[2];
 renderSVGToPNG(svg, path.join(outputPath, "test.png"));
 
 function renderSVGToPNG(svgContent: string, outputFilePath: string) {
-  const resvg = new Resvg(svgContent, {
-    fitTo: {
-      mode: "width",
-      value: 512,
-    },
-  });
-  const pngData = resvg.render();
-  fs.writeFileSync(outputFilePath, pngData.asPng());
+  const resvg = new Resvg(svgContent, { fitTo: { mode: "width", value: 512 } });
+
+  fs.writeFileSync(outputFilePath, resvg.render().asPng());
 }
