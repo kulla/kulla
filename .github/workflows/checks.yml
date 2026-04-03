@@ -7,14 +7,9 @@ on:
       - main
 
 jobs:
-  prettier:
+  format:
     runs-on: ubuntu-latest
     steps:
-      - name: Checkout code
-        uses: actions/checkout@v6
-
-      - name: Setup Bun
-        uses: ./.github/actions/setup-bun
-
-      - name: Check format
-        run: bun run check:format
+      - uses: actions/checkout@v6
+      - uses: ./.github/actions/setup-bun
+      - run: bun run check:format
