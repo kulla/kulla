@@ -30,3 +30,7 @@ clarity.
   formalism and reaches a substantial share of first-semester STEM students in
   Germany. A long-term community project and a personal commitment to open
   education.
+
+## Analytics
+
+<a href="https://profile.codersrank.io/user/kulla"><img src="https://cr-ss-service.azurewebsites.net/api/ScreenShot?widget=summary&username=kulla&badges=3&show-avatar=false&style=--header-bg-color:%23000;--border-radius:10px" width="500px"/></a>
