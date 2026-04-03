@@ -5,14 +5,12 @@
     "": {
       "name": "kulla-gitub-profile",
       "dependencies": {
-        "@resvg/resvg-js": "^2.6.2",
+        "@resvg/resvg-js": "2.6.2",
       },
       "devDependencies": {
-        "@types/bun": "latest",
-        "prettier": "^3.8.1",
-      },
-      "peerDependencies": {
-        "typescript": "^5",
+        "@types/bun": "1.3.11",
+        "prettier": "3.8.1",
+        "typescript": "5.9.3",
       },
     },
   },
