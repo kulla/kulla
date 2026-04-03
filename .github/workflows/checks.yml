@@ -7,14 +7,18 @@ on:
       - main
 
 jobs:
-  prettier:
+  audit:
     runs-on: ubuntu-latest
     steps:
-      - name: Checkout code
-        uses: actions/checkout@v6
+      - uses: actions/checkout@v6
+      - uses: ./.github/actions/setup-bun
+        with:
+          install: "false"
+      - run: bun audit
 
-      - name: Setup Bun
-        uses: ./.github/actions/setup-bun
-
-      - name: Check format
-        run: bun run check:format
+  format:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v6
+      - uses: ./.github/actions/setup-bun
+      - run: bun run check:format
